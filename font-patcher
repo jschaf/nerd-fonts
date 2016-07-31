@@ -396,6 +396,33 @@ def copy_glyphs(sourceFont, sourceFontStart, sourceFontEnd, symbolFont, symbolFo
 
             sourceFont[currentSourceFontGlyph].glyphname = glyphName
 
+            if symbolFont.fontname == 'Pomicons':
+                sourceFont.transform(psMat.scale(1.2))
+                sourceFont.transform(psMat.translate(0, -490))
+            elif symbolFont.fontname == 'PowerlineSymbols':
+                sourceFont.transform(psMat.scale(1.8))
+                sourceFont.transform(psMat.translate(0, -240))
+            # Powerline extras
+            elif symbolFont.fontname == 'DroidSansMonoForPowerlinePlusNerdFileTypesMono':
+                sourceFont.transform(psMat.scale(0.83))
+                sourceFont.transform(psMat.translate(0, -100))
+            # set ui
+            elif symbolFont.fontname == 'NerdFileTypes':
+                sourceFont.transform(psMat.scale(0.9))
+                sourceFont.transform(psMat.translate(0, -200))
+            # devicons
+            elif symbolFont.fontname == 'icomoon':
+                sourceFont.transform(psMat.scale(1.2))
+                sourceFont.transform(psMat.translate(0, -450))
+            elif symbolFont.fontname == 'FontAwesome':
+                sourceFont.transform(psMat.translate(0, -270))
+            elif symbolFont.fontname == 'octicons':
+                sourceFont.transform(psMat.translate(0, -200))
+            elif symbolFont.fontname == 'font-linux':
+                sourceFont.transform(psMat.translate(0, -300))
+            else:
+                pass
+
             if args.single:
                 # Now that we have copy/pasted the glyph, it's time to scale and move it
 
